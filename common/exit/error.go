@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Error(message string){
+func Error(message string) {
 	fmt.Printf("Error: %s\n", message)
 	os.Exit(1)
 }

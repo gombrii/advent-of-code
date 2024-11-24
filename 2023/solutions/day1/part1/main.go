@@ -1,4 +1,4 @@
-package day1
+package main
 
 import (
 	"fmt"
@@ -6,18 +6,26 @@ import (
 	"strconv"
 
 	"github.com/gomsim/Advent-of-code/common/exit"
+	"github.com/gomsim/Advent-of-code/common/input"
 )
 
-const all = -1
+var pattern = regexp.MustCompile(`\d`)
 
-var pattern = regexp.MustCompile("[0-9]")
+func main() {
+	in := input.Array()
+
+	numStrings := findAll(in)
+	sum := parseAndSum(numStrings)
+
+	fmt.Println(sum)
+}
 
 func firstLast(line string) (first string, last string) {
-	matches := pattern.FindAllString(line, all)
+	matches := pattern.FindAllString(line, -1)
 	return matches[0], matches[len(matches)-1]
 }
 
-func FindAll(lines []string) [][]string {
+func findAll(lines []string) [][]string {
 	numbers := make([][]string, len(lines))
 	for i, line := range lines {
 		first, last := firstLast(line)
@@ -26,22 +34,14 @@ func FindAll(lines []string) [][]string {
 	return numbers
 }
 
-func Parse(strings [][]string) []int {
-	numbers := make([]int, len(strings))
-	for i, str := range strings {
+func parseAndSum(strings [][]string) int {
+	acc := 0
+	for _, str := range strings {
 		num, err := strconv.Atoi(fmt.Sprint(str[0], str[1]))
 		if err != nil {
 			exit.Errorf("couldn't parse number: %v", err)
 		}
-		numbers[i] = num
-	}
-	return numbers
-}
-
-func Sum(numbers []int) int {
-	acc := 0
-	for _, number := range numbers {
-		acc += number
+		acc += num
 	}
 	return acc
 }

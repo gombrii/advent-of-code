@@ -1,7 +1,6 @@
 package input
 
 import (
-	"log"
 	"os"
 	"strings"
 
@@ -32,15 +31,4 @@ func read(path string) []byte {
 	}
 
 	return data
-}
-
-func File() {
-	log.Printf("inputpath: %v", os.Args[1])
-
-	stat, err := os.Stat(os.Args[0])
-	if err != nil {
-		exit.Errorf("invalid file path: %v", err)
-	}
-
-	log.Printf("FileInfo: %v", stat)
 }

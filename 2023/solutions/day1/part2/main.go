@@ -3,10 +3,13 @@ package main
 import (
 	"fmt"
 	"regexp"
+	"strconv"
 
-	"github.com/gomsim/Advent-of-code/2023/solution/day1"
+	"github.com/gomsim/Advent-of-code/common/exit"
 	"github.com/gomsim/Advent-of-code/common/input"
 )
+
+var pattern = regexp.MustCompile(`\d`)
 
 var (
 	one   = regexp.MustCompile("one")
@@ -21,10 +24,11 @@ var (
 )
 
 func main() {
-	formatted := format(input.Array())
-	numStrings := day1.FindAll(formatted)
-	numbers := day1.Parse(numStrings)
-	sum := day1.Sum(numbers)
+	in := input.Array()
+
+	formatted := format(in)
+	numStrings := findAll(formatted)
+	sum := parseAndSum(numStrings)
 
 	fmt.Println(sum)
 }
@@ -43,4 +47,30 @@ func format(strings []string) []string {
 		strings[i] = str
 	}
 	return strings
+}
+
+func firstLast(line string) (first string, last string) {
+	matches := pattern.FindAllString(line, -1)
+	return matches[0], matches[len(matches)-1]
+}
+
+func findAll(lines []string) [][]string {
+	numbers := make([][]string, len(lines))
+	for i, line := range lines {
+		first, last := firstLast(line)
+		numbers[i] = []string{first, last}
+	}
+	return numbers
+}
+
+func parseAndSum(strings [][]string) int {
+	acc := 0
+	for _, str := range strings {
+		num, err := strconv.Atoi(fmt.Sprint(str[0], str[1]))
+		if err != nil {
+			exit.Errorf("couldn't parse number: %v", err)
+		}
+		acc += num
+	}
+	return acc
 }
