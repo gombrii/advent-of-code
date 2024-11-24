@@ -1,12 +1,11 @@
-package main
+package day2
 
 import (
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/common/input"
+	"github.com/gomsim/Advent-of-code/shared/input"
 )
 
 var max = map[string]int{
@@ -15,10 +14,8 @@ var max = map[string]int{
 	"blue":  14,
 }
 
-var outcome = regexp.MustCompile(`(\d+) (\w+)`)
-
-func main() {
-	in := input.Array()
+func Part1(file string) {
+	in := input.Array(file)
 
 	sum := sumPossibleGames(in)
 

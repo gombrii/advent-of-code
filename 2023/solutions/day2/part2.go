@@ -1,18 +1,15 @@
-package main
+package day2
 
 import (
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/common/input"
+	"github.com/gomsim/Advent-of-code/shared/input"
 )
 
-var outcome = regexp.MustCompile(`(\d+) (\w+)`)
-
-func main() {
-	in := input.Array()
+func Part2(file string) {
+	in := input.Array(file)
 
 	sum := sumPower(in)
 

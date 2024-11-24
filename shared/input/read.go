@@ -4,19 +4,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/common/exit"
+	"github.com/gomsim/Advent-of-code/shared/exit"
 )
 
-func Array() []string {
-	data := read(inputFile())
+func Array(path string) []string {
+	data := read(path)
 	return strings.Split(string(data), "\n")
-}
-
-func inputFile() string {
-	if len(os.Args) < 2 {
-		exit.Error("no input file provided!")
-	}
-	return os.Args[1]
 }
 
 func read(path string) []byte {

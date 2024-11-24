@@ -1,15 +1,11 @@
-package main
+package day1
 
 import (
 	"fmt"
 	"regexp"
-	"strconv"
 
-	"github.com/gomsim/Advent-of-code/common/exit"
-	"github.com/gomsim/Advent-of-code/common/input"
+	"github.com/gomsim/Advent-of-code/shared/input"
 )
-
-var pattern = regexp.MustCompile(`\d`)
 
 var (
 	one   = regexp.MustCompile("one")
@@ -23,8 +19,8 @@ var (
 	nine  = regexp.MustCompile("nine")
 )
 
-func main() {
-	in := input.Array()
+func Part2(file string) {
+	in := input.Array(file)
 
 	formatted := format(in)
 	numStrings := findAll(formatted)
@@ -47,30 +43,4 @@ func format(strings []string) []string {
 		strings[i] = str
 	}
 	return strings
-}
-
-func firstLast(line string) (first string, last string) {
-	matches := pattern.FindAllString(line, -1)
-	return matches[0], matches[len(matches)-1]
-}
-
-func findAll(lines []string) [][]string {
-	numbers := make([][]string, len(lines))
-	for i, line := range lines {
-		first, last := firstLast(line)
-		numbers[i] = []string{first, last}
-	}
-	return numbers
-}
-
-func parseAndSum(strings [][]string) int {
-	acc := 0
-	for _, str := range strings {
-		num, err := strconv.Atoi(fmt.Sprint(str[0], str[1]))
-		if err != nil {
-			exit.Errorf("couldn't parse number: %v", err)
-		}
-		acc += num
-	}
-	return acc
 }

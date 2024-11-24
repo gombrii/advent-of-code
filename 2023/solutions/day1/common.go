@@ -1,24 +1,14 @@
-package main
+package day1
 
 import (
 	"fmt"
 	"regexp"
 	"strconv"
 
-	"github.com/gomsim/Advent-of-code/common/exit"
-	"github.com/gomsim/Advent-of-code/common/input"
+	"github.com/gomsim/Advent-of-code/shared/exit"
 )
 
 var pattern = regexp.MustCompile(`\d`)
-
-func main() {
-	in := input.Array()
-
-	numStrings := findAll(in)
-	sum := parseAndSum(numStrings)
-
-	fmt.Println(sum)
-}
 
 func firstLast(line string) (first string, last string) {
 	matches := pattern.FindAllString(line, -1)
