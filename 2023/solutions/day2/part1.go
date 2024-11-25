@@ -6,7 +6,12 @@ import (
 	"strings"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
+	"github.com/gomsim/Advent-of-code/shared/register"
 )
+
+func init() {
+	register.Part1("2023", "day2", Part1)
+}
 
 var max = map[string]int{
 	"red":   12,

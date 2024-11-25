@@ -6,7 +6,12 @@ import (
 	"strings"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
+	"github.com/gomsim/Advent-of-code/shared/register"
 )
+
+func init() {
+	register.Part2("2023", "day2", Part2)
+}
 
 func Part2(file string) {
 	in := input.Array(file)

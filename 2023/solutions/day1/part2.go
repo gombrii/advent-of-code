@@ -5,7 +5,12 @@ import (
 	"regexp"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
+	"github.com/gomsim/Advent-of-code/shared/register"
 )
+
+func init() {
+	register.Part2("2023", "day1", Part2)
+}
 
 var (
 	one   = regexp.MustCompile("one")
