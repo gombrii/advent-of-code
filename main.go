@@ -6,12 +6,13 @@ import (
 
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
 	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/register"
 )
 
 const (
-	year  = "2023"
+	year = "2024"
 
 	dayIndex   = 1
 	partIndex  = 2
@@ -30,5 +31,9 @@ func main() {
 
 	fmt.Printf("Running %s/%s/%s with %s\n", year, day, part, inputFile)
 
-	register.Registry[year][day][part](fmt.Sprintf("%s/%s", inputPath, inputFile))
+	solution := register.Registry[year][day][part]
+	if solution == nil {
+		exit.Errorf("Solution not found!")
+	}
+	solution(fmt.Sprintf("%s/%s", inputPath, inputFile))
 }

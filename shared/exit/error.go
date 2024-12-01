@@ -5,6 +5,13 @@ import (
 	"os"
 )
 
+func If(err error) {
+	if err != nil {
+		fmt.Printf("Error: %v", err)
+		os.Exit(1)
+	}
+}
+
 func Error(message string) {
 	fmt.Printf("Error: %s\n", message)
 	os.Exit(1)
