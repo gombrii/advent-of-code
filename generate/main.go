@@ -17,7 +17,7 @@ import (
 )
 
 func init() {
-	register.Part1("2024", "{{.Day}}", Part1)
+	register.Part1("{{.Year}}", "{{.Day}}", Part1)
 }
 	
 func Part1(file string) {
@@ -33,7 +33,7 @@ import (
 )
 
 func init() {
-	register.Part2("2024", "{{.Day}}", Part2)
+	register.Part2("{{.Year}}", "{{.Day}}", Part2)
 }
 	
 func Part2(file string) {
@@ -43,7 +43,8 @@ func Part2(file string) {
 const common = `package {{.Day}}`
 
 func main() {
-	day := os.Args[1]
+	year := os.Args[1]
+	day := os.Args[2]
 
 	solution := map[string]map[string]string{
 		day: {
@@ -62,26 +63,27 @@ func main() {
 
 	data := map[string]any{
 		"Day": day,
+		"Year": year,
 	}
 
-	create("solutions", solution, data)
-	create("input", input, data)
+	create("solutions", year, solution, data)
+	create("input", year, input, data)
 
 	fmt.Println("Catalogue and files with dynamic content created successfully.")
 
-	addImport(day)
+	addImport(year, day)
 }
 
-func create(parentDir string, structure map[string]map[string]string, data map[string]any) {
+func create(parentDir string, year string, structure map[string]map[string]string, data map[string]any) {
 	for dir, files := range structure {
-		err := os.MkdirAll(path.Join("2024", parentDir, dir), 0755)
+		err := os.MkdirAll(path.Join(year, parentDir, dir), 0755)
 		if err != nil {
 			fmt.Printf("Error creating directory %s: %v\n", dir, err)
 			continue
 		}
 
 		for fileName, templateContent := range files {
-			filePath := path.Join("2024", parentDir, dir, fileName)
+			filePath := path.Join(year, parentDir, dir, fileName)
 
 			tmpl, err := template.New(fileName).Parse(templateContent)
 			if err != nil {
@@ -95,8 +97,6 @@ func create(parentDir string, structure map[string]map[string]string, data map[s
 				continue
 			}
 
-			data["FileName"] = fileName
-
 			err = tmpl.Execute(file, data)
 			if err != nil {
 				fmt.Printf("Error writing to file %s: %v\n", filePath, err)
@@ -107,9 +107,9 @@ func create(parentDir string, structure map[string]map[string]string, data map[s
 	}
 }
 
-func addImport(day string) {
+func addImport(year string, day string) {
 	mainFilePath := "main.go"
-	importStatement := fmt.Sprintf(`_ "github.com/gomsim/Advent-of-code/2024/solutions/%s"`, day)
+	importStatement := fmt.Sprintf(`_ "github.com/gomsim/Advent-of-code/%s/solutions/%s"`, year, day)
 
 	content, err := os.ReadFile(mainFilePath)
 	if err != nil {
