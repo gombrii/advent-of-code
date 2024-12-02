@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 
+	"github.com/alexflint/go-arg"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
@@ -12,27 +12,25 @@ import (
 	"github.com/gomsim/Advent-of-code/shared/register"
 )
 
-const (
-	year = "2024"
-
-	dayIndex   = 1
-	partIndex  = 2
-	inputIndex = 3
-)
+type input struct {
+	Year string `arg:"-y,--year" default:"2024"`
+	Day  string `arg:"required, positional"`
+	Part string `arg:"required, positional"`
+	In   string `arg:"required, positional"`
+}
 
 func main() {
-	if len(os.Args) != 4 {
-		exit.Errorf("Need 3 arguments (daynumber, partnumber, input filename), got %d", len(os.Args)-1)
-	}
+	in := input{}
+	arg.MustParse(&in)
+	in.Day = fmt.Sprintf("day%s", in.Day)
+	in.Part = fmt.Sprintf("part%s", in.Part)
 
-	day := fmt.Sprintf("day%s", os.Args[dayIndex])
-	part := fmt.Sprintf("part%s", os.Args[partIndex])
-	inputPath := fmt.Sprintf("%s/input/%s", year, day)
-	inputFile := fmt.Sprintf("%s.txt", os.Args[inputIndex])
+	inputPath := fmt.Sprintf("%s/input/%s", in.Year, in.Day)
+	inputFile := fmt.Sprintf("%s.txt", in.In)
 
-	fmt.Printf("Running %s/%s/%s with %s\n", year, day, part, inputFile)
+	fmt.Printf("Running %s/%s/%s with %s\n", in.Year, in.Day, in.Part, inputFile)
 
-	solution := register.Registry[year][day][part]
+	solution := register.Registry[in.Year][in.Day][in.Part]
 	if solution == nil {
 		exit.Errorf("Solution not found!")
 	}

@@ -6,6 +6,8 @@ import (
 	"os"
 	"path"
 	"text/template"
+
+	"github.com/alexflint/go-arg"
 )
 
 const part1 = `package {{.Day}}
@@ -42,36 +44,42 @@ func Part2(file string) {
 
 const common = `package {{.Day}}`
 
+type input struct {
+	Year string `arg:"-y,--year" default:"2024"`
+	Day  string `arg:"required, positional"`
+}
+
 func main() {
-	year := os.Args[1]
-	day := os.Args[2]
+	in := input{}
+	arg.MustParse(&in)
+	in.Day = fmt.Sprintf("day%s", in.Day)
 
 	solution := map[string]map[string]string{
-		day: {
-			"part1.go": part1,
-			"part2.go": part2,
+		in.Day: {
+			"part1.go":  part1,
+			"part2.go":  part2,
 			"common.go": common,
 		},
 	}
 
 	input := map[string]map[string]string{
-		day: {
+		in.Day: {
 			"input.txt": "",
 			"test.txt":  "",
 		},
 	}
 
 	data := map[string]any{
-		"Day": day,
-		"Year": year,
+		"Day":  in.Day,
+		"Year": in.Year,
 	}
 
-	create("solutions", year, solution, data)
-	create("input", year, input, data)
+	create("solutions", in.Year, solution, data)
+	create("input", in.Year, input, data)
 
 	fmt.Println("Catalogue and files with dynamic content created successfully.")
 
-	addImport(year, day)
+	addImport(in.Year, in.Day)
 }
 
 func create(parentDir string, year string, structure map[string]map[string]string, data map[string]any) {
