@@ -7,6 +7,7 @@ import (
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day2"
 	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/register"
 )
