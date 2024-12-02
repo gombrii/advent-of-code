@@ -26,7 +26,11 @@ func Part1(file string) {
 
 const part2 = `package {{.Day}}
 
-import "github.com/gomsim/Advent-of-code/shared/register"
+import (
+	"fmt"
+
+	"github.com/gomsim/Advent-of-code/shared/register"	
+)
 
 func init() {
 	register.Part2("2024", "{{.Day}}", Part2)
@@ -36,6 +40,8 @@ func Part2(file string) {
 	fmt.Println("NOT IMPLEMENTED!")
 }`
 
+const common = `package {{.Day}}`
+
 func main() {
 	day := os.Args[1]
 
@@ -43,6 +49,7 @@ func main() {
 		day: {
 			"part1.go": part1,
 			"part2.go": part2,
+			"common.go": common,
 		},
 	}
 
