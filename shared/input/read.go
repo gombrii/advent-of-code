@@ -12,6 +12,10 @@ func Array(path string) []string {
 	return strings.Split(string(data), "\n")
 }
 
+func String(path string) string {
+	return string(read(path))
+}
+
 func read(path string) []byte {
 	_, err := os.Stat(path)
 	if err != nil {
