@@ -20,7 +20,7 @@ var max = map[string]int{
 }
 
 func Part1(file string) {
-	in := input.Array(file)
+	in := input.Slice(file)
 
 	sum := sumPossibleGames(in)
 

@@ -12,7 +12,7 @@ func init() {
 }
 
 func Part2(file string) {
-	in := input.Array(file)
+	in := input.Slice(file)
 
 	a, b := intArrays(in)
 	occurances := occurances(b)

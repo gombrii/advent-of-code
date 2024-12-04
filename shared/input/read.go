@@ -1,19 +1,25 @@
 package input
 
 import (
+	"bytes"
 	"os"
 	"strings"
 
 	"github.com/gomsim/Advent-of-code/shared/exit"
 )
 
-func Array(path string) []string {
+func Slice(path string) []string {
 	data := read(path)
 	return strings.Split(string(data), "\n")
 }
 
 func String(path string) string {
 	return string(read(path))
+}
+
+func Matrix(path string) [][]byte {
+	data := read(path)
+	return bytes.Split(data, []byte("\n"))
 }
 
 func read(path string) []byte {

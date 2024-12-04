@@ -12,7 +12,7 @@ func init() {
 }
 
 func Part1(file string) {
-	in := input.Array(file)
+	in := input.Slice(file)
 	washed := wash(in)
 	numSafe := numSafe(washed, safe)
 
