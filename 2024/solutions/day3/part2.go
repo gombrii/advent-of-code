@@ -18,16 +18,15 @@ func init() {
 var opPattern = regexp.MustCompile(`(mul|do|don't)\((\d+(,\d+)*)?\)`)
 
 const (
-	mul = "mul"
-	do = "do"
+	mul  = "mul"
+	do   = "do"
 	dont = "don't"
 )
 
 type operation struct {
-	op string
+	op   string
 	args []int
 }
-
 
 func Part2(file string) {
 	in := input.String(file)
@@ -42,7 +41,7 @@ func parseProgram(input string) (exec []operation) {
 	for _, match := range opPattern.FindAllString(input, -1) {
 		tokens := strings.Split(match, "(")
 		switch tokens[0] {
-		case mul: 
+		case mul:
 			exec = append(exec, operation{
 				op:   mul,
 				args: parseArgs(match),
@@ -78,15 +77,15 @@ func run(exec []operation) (acc int) {
 	enabled := true
 	for _, op := range exec {
 		switch op.op {
-			case mul: 
-				if enabled {
-					acc += op.args[0] * op.args[1]
-				}
-			case do:
-				enabled = true
-			case dont:
-				enabled = false
+		case mul:
+			if enabled {
+				acc += op.args[0] * op.args[1]
 			}
+		case do:
+			enabled = true
+		case dont:
+			enabled = false
+		}
 	}
 	return acc
 }

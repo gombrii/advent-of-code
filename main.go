@@ -1,8 +1,9 @@
 package main
 
 import (
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
 	"fmt"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
 
 	"github.com/alexflint/go-arg"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
