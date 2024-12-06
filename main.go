@@ -4,6 +4,7 @@ import (
 	"fmt"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day5"
 
 	"github.com/alexflint/go-arg"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
