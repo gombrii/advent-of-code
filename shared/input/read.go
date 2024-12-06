@@ -17,9 +17,21 @@ func String(path string) string {
 	return string(read(path))
 }
 
-func Matrix(path string) [][]byte {
+func OldBadMatrix(path string) [][]byte {
 	data := read(path)
 	return bytes.Split(data, []byte("\n"))
+}
+
+func Matrix(path string) [][]string {
+	data := read(path)
+	matrix := make([][]string, 0)
+
+	lines := strings.Split(string(data), "\n")
+	for _, line := range lines {
+		matrix = append(matrix, strings.Split(line, ""))
+	}
+
+	return matrix
 }
 
 func read(path string) []byte {

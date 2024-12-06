@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
 	"fmt"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"

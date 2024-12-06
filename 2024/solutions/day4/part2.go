@@ -13,7 +13,7 @@ func init() {
 }
 
 func Part2(file string) {
-	in := input.Matrix(file)
+	in := input.OldBadMatrix(file)
 
 	occ := countX(in)
 

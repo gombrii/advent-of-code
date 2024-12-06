@@ -17,7 +17,7 @@ func init() {
 }
 
 func Part1(file string) {
-	in := input.Matrix(file)
+	in := input.OldBadMatrix(file)
 
 	hor := in
 	ver := ver(in)
