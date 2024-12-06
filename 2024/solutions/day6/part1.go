@@ -79,18 +79,5 @@ func tick(matrix [][]string, guard guard) guard {
 	}
 	guard.pos.x = guard.pos.x + guard.dir.x
 	guard.pos.y = guard.pos.y + guard.dir.y
-	//if guard.pos.x < len(matrix[0]) && guard.pos.y < len(matrix) {
-	//	matrix[guard.pos.y][guard.pos.x] = "X" //Debug
-	//}
 	return guard
-}
-
-func printMatrix(matrix [][]string){ //Debug (put in matrices package)
-	fmt.Println()
-	for y := 0; y < len(matrix); y++ {
-		for x := 0; x < len(matrix[0]); x++ {
-			fmt.Printf("[%s]", matrix[y][x])
-		}
-		fmt.Println()
-	}
 }
