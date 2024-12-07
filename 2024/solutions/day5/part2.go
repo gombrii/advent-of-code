@@ -2,7 +2,6 @@ package day5
 
 import (
 	"fmt"
-	"time"
 
 	"github.com/gomsim/Advent-of-code/shared/data"
 	"github.com/gomsim/Advent-of-code/shared/input"
@@ -47,8 +46,7 @@ func newRules(rules map[string][]string) map[string][]string {
 
 func correctTheWrong(rules map[string][]string, updates []map[string]int) []map[string]int {
 	corrected := make([]map[string]int, len(updates))
-	fmt.Println("Timer start!")
-	before := time.Now()
+
 	for i, update := range updates {
 		// convert
 		linked := data.NewWinked[string]()
@@ -66,7 +64,7 @@ func correctTheWrong(rules map[string][]string, updates []map[string]int) []map[
 		}
 		corrected[i] = fixed
 	}
-	fmt.Printf("Sorting took %v!\n", time.Since(before))
+
 	return corrected
 }
 

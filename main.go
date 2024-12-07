@@ -1,11 +1,13 @@
 package main
 
 import (
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
 	"fmt"
+	"time"
+
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day5"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
 
 	"github.com/alexflint/go-arg"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
@@ -38,5 +40,7 @@ func main() {
 	if solution == nil {
 		exit.Errorf("Solution not found!")
 	}
+	start := time.Now()
 	solution(fmt.Sprintf("%s/%s", inputPath, inputFile))
+	fmt.Println(time.Since(start))
 }
