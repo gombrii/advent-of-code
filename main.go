@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day8"
 	"time"
 
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
