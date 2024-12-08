@@ -26,8 +26,7 @@ func findWithHarmonics(catalogue catalogue, boundX int, boundY int) map[data.Vec
 
 	for _, antennae := range catalogue {
 		for i, antenna := range antennae {
-			for j := i + 1; j < len(antennae); j++ {
-				other := antennae[j]
+			for _, other := range antennae[i+1:] {
 				dir := antenna.Sub(other).Red()
 
 				anti := antenna

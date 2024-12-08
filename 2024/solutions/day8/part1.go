@@ -28,8 +28,7 @@ func findAntinodes(catalogue catalogue, boundX int, boundY int) map[data.Vec[int
 
 	for _, antennae := range catalogue {
 		for i, antenna := range antennae {
-			for j := i + 1; j < len(antennae); j++ {
-				other := antennae[j]
+			for _, other := range antennae[i+1:] {
 				dist := antenna.Sub(other)
 				antiA := antenna.Add(dist)
 				if antiA.X >= 0 && antiA.Y >= 0 && antiA.X < boundX && antiA.Y < boundY {
