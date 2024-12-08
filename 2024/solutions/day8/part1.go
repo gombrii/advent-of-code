@@ -2,7 +2,6 @@ package day8
 
 import (
 	"fmt"
-	"regexp"
 
 	"github.com/gomsim/Advent-of-code/shared/data"
 	"github.com/gomsim/Advent-of-code/shared/input"
@@ -13,8 +12,6 @@ func init() {
 	register.Part1("2024", "day8", Part1)
 }
 
-var antenna = regexp.MustCompile(`\w|\d`)
-
 type catalogue map[string][]data.Vec[int]
 
 func Part1(file string) {
@@ -24,21 +21,6 @@ func Part1(file string) {
 	antinodes := findAntinodes(catal, len(in[0]), len(in))
 
 	fmt.Println(len(antinodes))
-}
-
-func parse(matrix [][]string) catalogue {
-	catal := make(catalogue)
-
-	for y := 0; y < len(matrix); y++ {
-		for x := 0; x < len(matrix[0]); x++ {
-			marking := matrix[y][x]
-			if antenna.MatchString(marking) {
-				catal[marking] = append(catal[marking], data.Vec[int]{X: x, Y: y})
-			}
-		}
-	}
-
-	return catal
 }
 
 func findAntinodes(catalogue catalogue, boundX int, boundY int) map[data.Vec[int]]bool {
