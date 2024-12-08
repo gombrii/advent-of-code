@@ -6,11 +6,11 @@ import (
 	"sort"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part1("2024", "day1", Part1)
+	registrar.Register("2024", "day1", "part1", Part1)
 }
 
 func Part1(file string) {

@@ -5,11 +5,11 @@ import (
 
 	"github.com/gomsim/Advent-of-code/shared/data"
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part2("2024", "day8", Part2)
+	registrar.Register("2024", "day8", "part2", Part2)
 }
 
 func Part2(file string) {
@@ -29,7 +29,7 @@ func findWithHarmonics(catalogue catalogue, boundX int, boundY int) map[data.Vec
 			for j := i + 1; j < len(antennae); j++ {
 				other := antennae[j]
 				dir := antenna.Sub(other).Red()
-				
+
 				anti := antenna
 				for anti.X >= 0 && anti.Y >= 0 && anti.X < boundX && anti.Y < boundY {
 					antinodes[anti] = true

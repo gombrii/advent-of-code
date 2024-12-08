@@ -5,11 +5,11 @@ import (
 
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/matrices"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part2("2024", "day4", Part2)
+	registrar.Register("2024", "day4", "part2", Part2)
 }
 
 func Part2(file string) {

@@ -5,11 +5,11 @@ import (
 	"regexp"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part2("2023", "day1", Part2)
+	registrar.Register("2023", "day1", "part2", Part2)
 }
 
 var (

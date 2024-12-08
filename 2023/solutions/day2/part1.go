@@ -6,11 +6,11 @@ import (
 	"strings"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part1("2023", "day2", Part1)
+	registrar.Register("2023", "day2", "part1", Part1)
 }
 
 var max = map[string]int{

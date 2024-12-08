@@ -8,11 +8,11 @@ import (
 
 	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 func init() {
-	register.Part1("2024", "day3", Part1)
+	registrar.Register("2024", "day3", "part1", Part1)
 }
 
 var mulPattern = regexp.MustCompile(`mul\(\d+,\d+\)`)

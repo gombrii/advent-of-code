@@ -6,14 +6,14 @@ import (
 
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/matrices"
-	"github.com/gomsim/Advent-of-code/shared/register"
+	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
 var forw = regexp.MustCompile("XMAS")
 var bacw = regexp.MustCompile("SAMX")
 
 func init() {
-	register.Part1("2024", "day4", Part1)
+	registrar.Register("2024", "day4", "part1", Part1)
 }
 
 func Part1(file string) {
