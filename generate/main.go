@@ -23,6 +23,8 @@ func init() {
 }
 	
 func Part1(file string) {
+	//in := input.Slice(file)
+
 	fmt.Println("NOT IMPLEMENTED!")
 }`
 
@@ -39,6 +41,8 @@ func init() {
 }
 	
 func Part2(file string) {
+	//in := input.Slice(file)
+
 	fmt.Println("NOT IMPLEMENTED!")
 }`
 

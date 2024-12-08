@@ -7,7 +7,7 @@ func Println(matrix [][]string) {
 		for x := 0; x < len(matrix[0]); x++ {
 			fmt.Printf("[%s]", matrix[y][x])
 		}
-		if y != len(matrix) - 1 {
+		if y != len(matrix)-1 {
 			fmt.Println()
 		}
 	}
