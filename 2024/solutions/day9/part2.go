@@ -3,7 +3,7 @@ package day9
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -69,9 +69,9 @@ func optimizeWithtFrag(data []*int) []*int {
 	return out
 }
 
-func format(nonFormatted []*int) (formatted data.Linked[file], reversed data.Linked[file]) {
-	formatted = data.NewLinked[file]()
-	reversed = data.NewLinked[file]()
+func format(nonFormatted []*int) (formatted dat.Linked[file], reversed dat.Linked[file]) {
+	formatted = dat.NewLinked[file]()
+	reversed = dat.NewLinked[file]()
 
 	i := 0
 	for i < len(nonFormatted) {

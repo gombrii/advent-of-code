@@ -3,12 +3,12 @@ package day10
 import (
 	"strconv"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/mat"
 )
 
-var dirs = []data.Vec[int]{
+var dirs = []dat.Vec[int]{
 	{X: -1, Y: 0},
 	{X: 0, Y: -1},
 	{X: 1, Y: 0},
@@ -17,9 +17,9 @@ var dirs = []data.Vec[int]{
 
 const goal = "9"
 
-func findTrailheads(matrix [][]string) map[data.Vec[int]]bool {
-	trailheads := make(map[data.Vec[int]]bool)
-	for pos, val := range data.Miter(matrix) {
+func findTrailheads(matrix [][]string) map[dat.Vec[int]]bool {
+	trailheads := make(map[dat.Vec[int]]bool)
+	for pos, val := range dat.Miter(matrix) {
 		if val == "0" {
 			trailheads[pos] = true
 		}
@@ -27,7 +27,7 @@ func findTrailheads(matrix [][]string) map[data.Vec[int]]bool {
 	return trailheads
 }
 
-func trail(matrix [][]string, from data.Vec[int], ends map[data.Vec[int]]bool) (map[data.Vec[int]]bool, int) {
+func trail(matrix [][]string, from dat.Vec[int], ends map[dat.Vec[int]]bool) (map[dat.Vec[int]]bool, int) {
 	//fmt.Println()
 	//time.Sleep(time.Millisecond * 100)
 	//mat.PrintMatrixReplace(matrix, mat.Replace[string]{
@@ -56,7 +56,7 @@ func trail(matrix [][]string, from data.Vec[int], ends map[data.Vec[int]]bool) (
 	return goals, rating
 }
 
-func turns(matrix [][]string, from data.Vec[int], ends map[data.Vec[int]]bool) (map[data.Vec[int]]bool, int) {
+func turns(matrix [][]string, from dat.Vec[int], ends map[dat.Vec[int]]bool) (map[dat.Vec[int]]bool, int) {
 	acc := 0
 	for _, dir := range dirs {
 		to := from.Add(dir)

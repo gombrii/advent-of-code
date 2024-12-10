@@ -3,7 +3,7 @@ package day8
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -21,8 +21,8 @@ func Part2(file string) {
 	fmt.Println(len(antinodes))
 }
 
-func findWithHarmonics(catalogue catalogue, boundX int, boundY int) map[data.Vec[int]]bool {
-	antinodes := make(map[data.Vec[int]]bool)
+func findWithHarmonics(catalogue catalogue, boundX int, boundY int) map[dat.Vec[int]]bool {
+	antinodes := make(map[dat.Vec[int]]bool)
 
 	for _, antennae := range catalogue {
 		for i, antenna := range antennae {

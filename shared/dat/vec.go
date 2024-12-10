@@ -1,4 +1,4 @@
-package data
+package dat
 
 type Vec[T float64 | int] struct {
 	X T

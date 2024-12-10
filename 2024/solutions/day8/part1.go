@@ -3,7 +3,7 @@ package day8
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -12,7 +12,7 @@ func init() {
 	registrar.Register("2024", "day8", "part1", Part1)
 }
 
-type catalogue map[string][]data.Vec[int]
+type catalogue map[string][]dat.Vec[int]
 
 func Part1(file string) {
 	in := input.Matrix(file)
@@ -23,8 +23,8 @@ func Part1(file string) {
 	fmt.Println(len(antinodes))
 }
 
-func findAntinodes(catalogue catalogue, boundX int, boundY int) map[data.Vec[int]]bool {
-	antinodes := make(map[data.Vec[int]]bool)
+func findAntinodes(catalogue catalogue, boundX int, boundY int) map[dat.Vec[int]]bool {
+	antinodes := make(map[dat.Vec[int]]bool)
 
 	for _, antennae := range catalogue {
 		for i, antenna := range antennae {

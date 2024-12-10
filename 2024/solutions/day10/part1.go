@@ -3,7 +3,7 @@ package day10
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -21,10 +21,10 @@ func Part1(file string) {
 	fmt.Println(score)
 }
 
-func trails(matrix [][]string, trailheads map[data.Vec[int]]bool) int {
+func trails(matrix [][]string, trailheads map[dat.Vec[int]]bool) int {
 	score := 0
 	for trailhead := range trailheads {
-		goals, _ := trail(matrix, trailhead, make(map[data.Vec[int]]bool))
+		goals, _ := trail(matrix, trailhead, make(map[dat.Vec[int]]bool))
 		score += len(goals)
 	}
 	return score

@@ -3,7 +3,7 @@ package day5
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/data"
+	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -49,7 +49,7 @@ func correctTheWrong(rules map[string][]string, updates []map[string]int) []map[
 
 	for i, update := range updates {
 		// convert
-		linked := data.NewWinked[string]()
+		linked := dat.NewWinked[string]()
 		for val := range update {
 			linked.Append(val)
 		}
@@ -68,7 +68,7 @@ func correctTheWrong(rules map[string][]string, updates []map[string]int) []map[
 	return corrected
 }
 
-func toCorrect(rules map[string][]string, update data.Winked[string]) data.Winked[string] {
+func toCorrect(rules map[string][]string, update dat.Winked[string]) dat.Winked[string] {
 	modified := true
 	for modified {
 		modified = false
