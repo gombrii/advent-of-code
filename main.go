@@ -1,8 +1,9 @@
 package main
 
 import (
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
 	"fmt"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day10"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
 	"time"
 
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
