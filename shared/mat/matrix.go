@@ -19,10 +19,19 @@ func PrintMatrix[T any](matrix [][]T) {
 	}
 }
 
-func PrintMatrixReplace[T any](matrix [][]T, replace map[data.Vec[int]]T) {
+type Replace[T comparable] map[T]map[data.Vec[int]]bool
+
+func PrintMatrixReplace[T comparable](matrix [][]T, replace Replace[T]) {
+	replacements := make(map[data.Vec[int]]T)
+	for rep, coordinates := range replace {
+		for coordinate := range coordinates {
+			replacements[coordinate] = rep
+		}
+	}
+
 	for y := 0; y < len(matrix); y++ {
 		for x := 0; x < len(matrix[0]); x++ {
-			if val, exists := replace[data.Vec[int]{X: x, Y: y}]; exists {
+			if val, exists := replacements[data.Vec[int]{X: x, Y: y}]; exists {
 				fmt.Print(val)
 			} else {
 				fmt.Print(matrix[y][x])
