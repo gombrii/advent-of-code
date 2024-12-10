@@ -16,16 +16,15 @@ func Part2(file string) {
 	in := input.Matrix(file)
 
 	trailheads := findTrailheads(in)
-	score := trailRatings(in, trailheads)
+	score := scoreTrails(in, trailheads)
 
 	fmt.Println(score)
 }
 
-func trailRatings(matrix [][]string, trailheads map[dat.Vec[int]]bool) int {
+func scoreTrails(matrix [][]string, trailheads map[dat.Vec[int]]bool) int {
 	score := 0
 	for trailhead := range trailheads {
-		_, rating := trail(matrix, trailhead, make(map[dat.Vec[int]]bool))
-		score += rating
+		score += len(paths(matrix, trailhead, []dat.Vec[int]{}))
 	}
 	return score
 }

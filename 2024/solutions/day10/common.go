@@ -27,37 +27,15 @@ func findTrailheads(matrix [][]string) map[dat.Vec[int]]bool {
 	return trailheads
 }
 
-func trail(matrix [][]string, from dat.Vec[int], ends map[dat.Vec[int]]bool) (map[dat.Vec[int]]bool, int) {
-	//fmt.Println()
-	//time.Sleep(time.Millisecond * 100)
-	//mat.PrintMatrixReplace(matrix, mat.Replace[string]{
-	//	" ": ends,
-	//	"█": map[data.Vec[int]]bool{
-	//		{X: from.X, Y: from.Y}: true,
-	//	},
-	//})
-
+func paths(matrix [][]string, from dat.Vec[int], ends []dat.Vec[int]) []dat.Vec[int] {
 	if matrix[from.Y][from.X] == goal {
-		ends[from] = true
-		return ends, 1
+		return append(ends, from)
 	}
 
-	goals, rating := turns(matrix, from, ends)
-
-	//fmt.Println()
-	//time.Sleep(time.Millisecond * 100)
-	//mat.PrintMatrixReplace(matrix, mat.Replace[string]{
-	//	" ": ends,
-	//	"█": map[data.Vec[int]]bool{
-	//		{X: from.X, Y: from.Y}: true,
-	//	},
-	//})
-
-	return goals, rating
+	return turns(matrix, from, ends)
 }
 
-func turns(matrix [][]string, from dat.Vec[int], ends map[dat.Vec[int]]bool) (map[dat.Vec[int]]bool, int) {
-	acc := 0
+func turns(matrix [][]string, from dat.Vec[int], ends []dat.Vec[int]) []dat.Vec[int] {
 	for _, dir := range dirs {
 		to := from.Add(dir)
 		if !mat.InBounds(matrix, to.X, to.Y) {
@@ -69,10 +47,8 @@ func turns(matrix [][]string, from dat.Vec[int], ends map[dat.Vec[int]]bool) (ma
 		exit.If(err)
 
 		if nextHeight-currHeight == 1 {
-			newEnds, rating := trail(matrix, to, ends)
-			ends = newEnds
-			acc += rating
+			ends = paths(matrix, to, ends)
 		}
 	}
-	return ends, acc
+	return ends
 }
