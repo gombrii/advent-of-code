@@ -27,11 +27,11 @@ var advancedManual = manual{
 	},
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 
 	testVals, numbers := extractAll(in)
 	total := total(testVals, numbers, advancedManual)
 
-	fmt.Println(total)
+	return total
 }

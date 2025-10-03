@@ -1,8 +1,6 @@
 package day9
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -18,14 +16,14 @@ type file struct {
 	uid  int
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.String(file)
 
 	decompressed := decompress(in)
 	optimized := optimizeWithtFrag(decompressed)
 	checksum := checksum(optimized)
 
-	fmt.Println(checksum)
+	return checksum
 }
 
 func optimizeWithtFrag(data []*int) []*int {

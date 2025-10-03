@@ -1,7 +1,6 @@
 package day2
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -19,12 +18,12 @@ var max = map[string]int{
 	"blue":  14,
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.Slice(file)
 
 	sum := sumPossibleGames(in)
 
-	fmt.Println(sum)
+	return sum
 }
 
 func sumPossibleGames(games []string) int {

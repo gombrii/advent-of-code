@@ -13,8 +13,6 @@ import (
 const part1 = `package {{.Day}}
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/registrar"	
 )
 
@@ -22,17 +20,15 @@ func init() {
 	registrar.Register("{{.Year}}", "{{.Day}}", "part1", Part1)
 }
 	
-func Part1(file string) {
+func Part1(file string) any {
 	//in := input.Slice(file)
 
-	fmt.Println("NOT IMPLEMENTED!")
+	return "NOT IMPLEMENTED!"
 }`
 
 const part2 = `package {{.Day}}
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/registrar"	
 )
 
@@ -40,17 +36,17 @@ func init() {
 	registrar.Register("{{.Year}}", "{{.Day}}", "part2", Part2)
 }
 	
-func Part2(file string) {
+func Part2(file string) any {
 	//in := input.Slice(file)
 
-	fmt.Println("NOT IMPLEMENTED!")
+	return "NOT IMPLEMENTED!"
 }`
 
 const common = `package {{.Day}}`
 
 type input struct {
 	Year string `arg:"-y,--year" default:"2024"`
-	Day  string `arg:"required, positional"`
+	Day  string `arg:"-d,--day,required"`
 }
 
 func main() {

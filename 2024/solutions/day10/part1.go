@@ -1,8 +1,6 @@
 package day10
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -12,13 +10,13 @@ func init() {
 	registrar.Register("2024", "day10", "part1", Part1)
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.Matrix(file)
 
 	trailheads := findTrailheads(in)
 	score := scoreTrailheads(in, trailheads)
 
-	fmt.Println(score)
+	return score
 }
 
 func scoreTrailheads(matrix [][]string, trailheads map[dat.Vec[int]]bool) int {

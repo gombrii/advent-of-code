@@ -1,27 +1,25 @@
 package main
 
 import (
+	"os"
+
+	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
+	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day10"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day11"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
-
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day8"
-
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day2"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day5"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day8"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
 
 	"fmt"
 	"time"
 
 	"github.com/alexflint/go-arg"
-	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
-	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day2"
-	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
 
@@ -45,9 +43,11 @@ func main() {
 
 	solution := registrar.Registry[in.Year][in.Day][in.Part]
 	if solution == nil {
-		exit.Errorf("Solution not found!")
+		fmt.Println("Error: Solution not found!")
+		os.Exit(1)
 	}
 	start := time.Now()
-	solution(fmt.Sprintf("%s/%s", inputPath, inputFile))
-	fmt.Println(time.Since(start))
+	result := solution(fmt.Sprintf("%s/%s", inputPath, inputFile))
+	fmt.Println("Res:", result)
+	fmt.Println("Dur:", time.Since(start))
 }

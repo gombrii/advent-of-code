@@ -1,7 +1,6 @@
 package day3
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -28,13 +27,13 @@ type operation struct {
 	args []int
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.String(file)
 
 	exec := parseProgram(in)
 	output := run(exec)
 
-	fmt.Println(output)
+	return output
 }
 
 func parseProgram(input string) (exec []operation) {

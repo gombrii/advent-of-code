@@ -16,7 +16,7 @@ func init() {
 	registrar.Register("2024", "day4", "part1", Part1)
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.OldBadMatrix(file)
 
 	hor := in
@@ -26,7 +26,7 @@ func Part1(file string) {
 
 	occ := count(hor) + count(ver) + count(diagNeg) + count(diagPos)
 
-	fmt.Println(occ)
+	return occ
 }
 
 func ver(matrix [][]byte) [][]byte {

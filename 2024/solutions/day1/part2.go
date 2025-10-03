@@ -1,8 +1,6 @@
 package day1
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -11,14 +9,14 @@ func init() {
 	registrar.Register("2024", "day1", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 
 	a, b := intArrays(in)
 	occurances := occurances(b)
 	score := simscore(a, occurances)
 
-	fmt.Println(score)
+	return score
 }
 
 func occurances(numbers []int) map[int]int {

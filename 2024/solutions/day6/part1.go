@@ -1,8 +1,6 @@
 package day6
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -31,13 +29,13 @@ type guard struct {
 	trace map[vec]bool
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	matrix := input.Matrix(file)
 
 	guard := findGuard(matrix)
 	guard = passTime(matrix, guard)
 
-	fmt.Println(len(guard.trace))
+	return len(guard.trace)
 }
 
 func findGuard(matrix [][]string) guard {

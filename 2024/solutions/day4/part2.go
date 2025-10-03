@@ -1,8 +1,6 @@
 package day4
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/matrices"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -12,12 +10,12 @@ func init() {
 	registrar.Register("2024", "day4", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.OldBadMatrix(file)
 
 	occ := countX(in)
 
-	fmt.Println(occ)
+	return occ
 }
 
 func countX(matrix [][]byte) int {

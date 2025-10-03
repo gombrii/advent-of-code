@@ -1,7 +1,6 @@
 package day1
 
 import (
-	"fmt"
 	"regexp"
 
 	"github.com/gomsim/Advent-of-code/shared/input"
@@ -24,14 +23,14 @@ var (
 	nine  = regexp.MustCompile("nine")
 )
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 
 	formatted := format(in)
 	numStrings := findAll(formatted)
 	sum := parseAndSum(numStrings)
 
-	fmt.Println(sum)
+	return sum
 }
 
 func format(strings []string) []string {

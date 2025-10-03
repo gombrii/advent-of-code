@@ -1,7 +1,6 @@
 package day1
 
 import (
-	"fmt"
 	"math"
 	"sort"
 
@@ -13,7 +12,7 @@ func init() {
 	registrar.Register("2024", "day1", "part1", Part1)
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.Slice(file)
 
 	a, b := intArrays(in)
@@ -21,7 +20,7 @@ func Part1(file string) {
 	sort.Ints(b)
 	dist := totalDist(a, b)
 
-	fmt.Println(dist)
+	return dist
 }
 
 func totalDist(a []int, b []int) int {

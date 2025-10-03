@@ -1,8 +1,6 @@
 package day7
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -20,11 +18,11 @@ var simpleManual = manual{
 	},
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.Slice(file)
 
 	testVals, numbers := extractAll(in)
 	total := total(testVals, numbers, simpleManual)
 
-	fmt.Println(total)
+	return total
 }

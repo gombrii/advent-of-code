@@ -1,8 +1,6 @@
 package day5
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -12,7 +10,7 @@ func init() {
 	registrar.Register("2024", "day5", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 
 	rules, updates := parse(in)
@@ -21,7 +19,7 @@ func Part2(file string) {
 	correctedUpdates := correctTheWrong(newRules, incorrectUpdates)
 	sum := sum(correctedUpdates)
 
-	fmt.Println(sum)
+	return sum
 }
 
 func findIncorrect(rules map[string][]string, updates []map[string]int) []map[string]int {

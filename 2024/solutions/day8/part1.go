@@ -1,8 +1,6 @@
 package day8
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -14,13 +12,13 @@ func init() {
 
 type catalogue map[string][]dat.Vec[int]
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.Matrix(file)
 
 	catal := parse(in)
 	antinodes := findAntinodes(catal, len(in[0]), len(in))
 
-	fmt.Println(len(antinodes))
+	return len(antinodes)
 }
 
 func findAntinodes(catalogue catalogue, boundX int, boundY int) map[dat.Vec[int]]bool {

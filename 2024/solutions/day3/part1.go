@@ -1,7 +1,6 @@
 package day3
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -18,12 +17,12 @@ func init() {
 var mulPattern = regexp.MustCompile(`mul\(\d+,\d+\)`)
 var mulWash = regexp.MustCompile(`mul|\(|\)`)
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.String(file)
 
 	result := runProgram(in)
 
-	fmt.Println(result)
+	return result
 }
 
 func runProgram(input string) int {

@@ -1,8 +1,6 @@
 package day9
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -11,14 +9,14 @@ func init() {
 	registrar.Register("2024", "day9", "part1", Part1)
 }
 
-func Part1(file string) {
+func Part1(file string) any {
 	in := input.String(file)
 
 	decompressed := decompress(in)
 	optimized := optimize(decompressed)
 	checksum := checksum(optimized)
 
-	fmt.Println(checksum)
+	return checksum
 }
 
 func appendFile(data []*int, id int, size int) []*int {

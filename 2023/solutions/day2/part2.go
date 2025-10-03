@@ -1,7 +1,6 @@
 package day2
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -13,12 +12,12 @@ func init() {
 	registrar.Register("2023", "day2", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 
 	sum := sumPower(in)
 
-	fmt.Println(sum)
+	return sum
 }
 
 func sumPower(games []string) int {

@@ -1,8 +1,6 @@
 package day8
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
@@ -12,13 +10,13 @@ func init() {
 	registrar.Register("2024", "day8", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Matrix(file)
 
 	catal := parse(in)
 	antinodes := findWithHarmonics(catal, len(in[0]), len(in))
 
-	fmt.Println(len(antinodes))
+	return len(antinodes)
 }
 
 func findWithHarmonics(catalogue catalogue, boundX int, boundY int) map[dat.Vec[int]]bool {

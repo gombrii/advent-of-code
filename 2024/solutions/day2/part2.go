@@ -1,8 +1,6 @@
 package day2
 
 import (
-	"fmt"
-
 	"github.com/gomsim/Advent-of-code/shared/input"
 	"github.com/gomsim/Advent-of-code/shared/registrar"
 )
@@ -11,12 +9,12 @@ func init() {
 	registrar.Register("2024", "day2", "part2", Part2)
 }
 
-func Part2(file string) {
+func Part2(file string) any {
 	in := input.Slice(file)
 	washed := wash(in)
 	numSafe := numSafe(washed, safeWithDampening)
 
-	fmt.Println(numSafe)
+	return numSafe
 }
 
 func safeWithDampening(report []int) bool {
