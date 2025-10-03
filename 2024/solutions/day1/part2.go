@@ -2,11 +2,11 @@ package day1
 
 import (
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registrar"
+	"github.com/gomsim/Advent-of-code/shared/registry"
 )
 
 func init() {
-	registrar.Register("2024", "day1", "part2", Part2)
+	registry.Register("2024", "day1", "part2", Part2)
 }
 
 func Part2(file string) any {

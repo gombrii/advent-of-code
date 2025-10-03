@@ -2,21 +2,24 @@ package input
 
 import (
 	"bytes"
+	"fmt"
 	"os"
 	"strings"
-
-	"github.com/gomsim/Advent-of-code/shared/exit"
 )
 
+// Slice returns the data in the specified file as a slice where each element represents a line of
+// text.
 func Slice(path string) []string {
 	data := read(path)
 	return strings.Split(string(data), "\n")
 }
 
+// String returns the data in the specified file as a continuous string.
 func String(path string) string {
 	return string(read(path))
 }
 
+// Deprecated: Use Matrix instead
 func OldBadMatrix(path string) [][]byte {
 	data := read(path)
 	return bytes.Split(data, []byte("\n"))
@@ -37,12 +40,14 @@ func Matrix(path string) [][]string {
 func read(path string) []byte {
 	_, err := os.Stat(path)
 	if err != nil {
-		exit.Errorf("invalid file path: %v", err)
+		fmt.Printf("Error: invalid file path: %v", err)
+		os.Exit(1)
 	}
 
 	data, err := os.ReadFile(path)
 	if err != nil {
-		exit.Errorf("could not read file: %v", err)
+		fmt.Printf("Error: could not read file: %v", err)
+		os.Exit(1)
 	}
 
 	return data

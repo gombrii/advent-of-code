@@ -13,11 +13,11 @@ import (
 const part1 = `package {{.Day}}
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/registrar"	
+	"github.com/gomsim/Advent-of-code/shared/registry"	
 )
 
 func init() {
-	registrar.Register("{{.Year}}", "{{.Day}}", "part1", Part1)
+	registry.Register("{{.Year}}", "{{.Day}}", "part1", Part1)
 }
 	
 func Part1(file string) any {
@@ -29,11 +29,11 @@ func Part1(file string) any {
 const part2 = `package {{.Day}}
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/registrar"	
+	"github.com/gomsim/Advent-of-code/shared/registry"	
 )
 
 func init() {
-	registrar.Register("{{.Year}}", "{{.Day}}", "part2", Part2)
+	registry.Register("{{.Year}}", "{{.Day}}", "part2", Part2)
 }
 	
 func Part2(file string) any {

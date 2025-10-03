@@ -1,8 +1,6 @@
 package main
 
 import (
-	"os"
-
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
@@ -17,10 +15,11 @@ import (
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
 
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/alexflint/go-arg"
-	"github.com/gomsim/Advent-of-code/shared/registrar"
+	"github.com/gomsim/Advent-of-code/shared/registry"
 )
 
 type input struct {
@@ -41,7 +40,7 @@ func main() {
 
 	fmt.Printf("Running %s/%s/%s with %s\n", in.Year, in.Day, in.Part, inputFile)
 
-	solution := registrar.Registry[in.Year][in.Day][in.Part]
+	solution := registry.Registry[in.Year][in.Day][in.Part]
 	if solution == nil {
 		fmt.Println("Error: Solution not found!")
 		os.Exit(1)

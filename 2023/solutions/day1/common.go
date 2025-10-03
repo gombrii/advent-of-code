@@ -28,9 +28,7 @@ func parseAndSum(strings [][]string) int {
 	acc := 0
 	for _, str := range strings {
 		num, err := strconv.Atoi(fmt.Sprint(str[0], str[1]))
-		if err != nil {
-			exit.Errorf("couldn't parse number: %v", err)
-		}
+		exit.If(err)
 		acc += num
 	}
 	return acc

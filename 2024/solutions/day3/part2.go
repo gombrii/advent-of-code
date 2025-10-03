@@ -7,11 +7,11 @@ import (
 
 	"github.com/gomsim/Advent-of-code/shared/exit"
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registrar"
+	"github.com/gomsim/Advent-of-code/shared/registry"
 )
 
 func init() {
-	registrar.Register("2024", "day3", "part2", Part2)
+	registry.Register("2024", "day3", "part2", Part2)
 }
 
 var opPattern = regexp.MustCompile(`(mul|do|don't)\((\d+(,\d+)*)?\)`)

@@ -2,11 +2,11 @@ package day7
 
 import (
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registrar"
+	"github.com/gomsim/Advent-of-code/shared/registry"
 )
 
 func init() {
-	registrar.Register("2024", "day7", "part1", Part1)
+	registry.Register("2024", "day7", "part1", Part1)
 }
 
 var simpleManual = manual{

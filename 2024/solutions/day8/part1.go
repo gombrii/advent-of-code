@@ -3,11 +3,11 @@ package day8
 import (
 	"github.com/gomsim/Advent-of-code/shared/dat"
 	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registrar"
+	"github.com/gomsim/Advent-of-code/shared/registry"
 )
 
 func init() {
-	registrar.Register("2024", "day8", "part1", Part1)
+	registry.Register("2024", "day8", "part1", Part1)
 }
 
 type catalogue map[string][]dat.Vec[int]
