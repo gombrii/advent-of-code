@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day10"
+	_ "github.com/gomsim/Advent-of-code/2024/solutions/day11"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
-	"time"
 
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day8"
@@ -13,6 +12,9 @@ import (
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day5"
 	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
+
+	"fmt"
+	"time"
 
 	"github.com/alexflint/go-arg"
 	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
@@ -25,9 +27,9 @@ import (
 
 type input struct {
 	Year string `arg:"-y,--year" default:"2024"`
-	Day  string `arg:"required, positional"`
-	Part string `arg:"required, positional"`
-	In   string `arg:"required, positional"`
+	Day  string `arg:"-d,--day,required"`
+	Part string `arg:"-p,--part,required"`
+	In   string `arg:"-i,--input" default:"input"`
 }
 
 func main() {
