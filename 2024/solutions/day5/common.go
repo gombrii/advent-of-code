@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/exit"
 )
 
 func parse(input []string) (rules map[string][]string, updates []map[string]int) {

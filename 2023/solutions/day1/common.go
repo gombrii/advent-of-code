@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/gomsim/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/exit"
 )
 
 var pattern = regexp.MustCompile(`\d`)

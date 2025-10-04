@@ -13,7 +13,7 @@ import (
 const part1 = `package {{.Day}}
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/registry"	
+	"github.com/gombrii/Advent-of-code/shared/registry"	
 )
 
 func init() {
@@ -29,7 +29,7 @@ func Part1(file string) any {
 const part2 = `package {{.Day}}
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/registry"	
+	"github.com/gombrii/Advent-of-code/shared/registry"	
 )
 
 func init() {
@@ -117,7 +117,7 @@ func create(parentDir string, year string, structure map[string]map[string]strin
 
 func addImport(year string, day string) {
 	mainFilePath := "main.go"
-	importStatement := fmt.Sprintf(`_ "github.com/gomsim/Advent-of-code/%s/solutions/%s"`, year, day)
+	importStatement := fmt.Sprintf(`_ "github.com/gombrii/Advent-of-code/%s/solutions/%s"`, year, day)
 
 	content, err := os.ReadFile(mainFilePath)
 	if err != nil {

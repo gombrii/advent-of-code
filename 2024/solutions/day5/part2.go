@@ -1,9 +1,9 @@
 package day5
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/dat"
-	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/dat"
+	"github.com/gombrii/Advent-of-code/shared/input"
+	"github.com/gombrii/Advent-of-code/shared/registry"
 )
 
 func init() {

@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/exit"
 )
 
 func intArrays(data []string) (a []int, b []int) {

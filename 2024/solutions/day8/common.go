@@ -3,7 +3,7 @@ package day8
 import (
 	"regexp"
 
-	"github.com/gomsim/Advent-of-code/shared/dat"
+	"github.com/gombrii/Advent-of-code/shared/dat"
 )
 
 var antenna = regexp.MustCompile(`\w|\d`)

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/exit"
 )
 
 const maxDiff = 3

@@ -1,7 +1,9 @@
 package day6
 
 import (
-	"github.com/gomsim/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/input"
+	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/render"
 )
 
 func init() {
@@ -9,5 +11,8 @@ func init() {
 }
 
 func Part2(file string) any {
+	matrix := input.Matrix(file)
+	render.Matrix(matrix)
+
 	return "NOT IMPLEMENTED!"
 }

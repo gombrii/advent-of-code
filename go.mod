@@ -1,4 +1,4 @@
-module github.com/gomsim/Advent-of-code
+module github.com/gombrii/Advent-of-code
 
 go 1.23.3
 

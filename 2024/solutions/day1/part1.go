@@ -4,8 +4,8 @@ import (
 	"math"
 	"sort"
 
-	"github.com/gomsim/Advent-of-code/shared/input"
-	"github.com/gomsim/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/input"
+	"github.com/gombrii/Advent-of-code/shared/registry"
 )
 
 func init() {

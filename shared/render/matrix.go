@@ -3,7 +3,7 @@ package render
 import (
 	"fmt"
 
-	"github.com/gomsim/Advent-of-code/shared/dat"
+	"github.com/gombrii/Advent-of-code/shared/dat"
 )
 
 func Matrix[T any](matrix [][]T) {

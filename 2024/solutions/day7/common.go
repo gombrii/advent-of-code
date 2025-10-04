@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gomsim/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/exit"
 )
 
 type manual map[string]func(int, int) int

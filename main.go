@@ -1,25 +1,25 @@
 package main
 
 import (
-	_ "github.com/gomsim/Advent-of-code/2023/solutions/day1"
-	_ "github.com/gomsim/Advent-of-code/2023/solutions/day2"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day1"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day10"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day2"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day3"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day4"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day5"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day6"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day7"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day8"
-	_ "github.com/gomsim/Advent-of-code/2024/solutions/day9"
+	_ "github.com/gombrii/Advent-of-code/2023/solutions/day1"
+	_ "github.com/gombrii/Advent-of-code/2023/solutions/day2"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day1"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day10"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day2"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day3"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day4"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day5"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day6"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day7"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day8"
+	_ "github.com/gombrii/Advent-of-code/2024/solutions/day9"
 
 	"fmt"
 	"os"
 	"time"
 
 	"github.com/alexflint/go-arg"
-	"github.com/gomsim/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/registry"
 )
 
 type input struct {

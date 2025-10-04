@@ -3,9 +3,9 @@ package day10
 import (
 	"strconv"
 
-	"github.com/gomsim/Advent-of-code/shared/dat"
-	"github.com/gomsim/Advent-of-code/shared/exit"
-	"github.com/gomsim/Advent-of-code/shared/mat"
+	"github.com/gombrii/Advent-of-code/shared/dat"
+	"github.com/gombrii/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/mat"
 )
 
 var dirs = []dat.Vec[int]{
