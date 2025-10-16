@@ -1,13 +1,8 @@
 package day7
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
-
-func init() {
-	registry.Register("2024", "day7", "part1", Part1)
-}
 
 var simpleManual = manual{
 	"*": func(a int, b int) int {
@@ -18,8 +13,8 @@ var simpleManual = manual{
 	},
 }
 
-func Part1(file string) any {
-	in := input.Slice(file)
+func Part1(data []byte) any {
+	in := parse.Lines(data)
 
 	testVals, numbers := extractAll(in)
 	total := total(testVals, numbers, simpleManual)

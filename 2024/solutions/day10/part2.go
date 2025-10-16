@@ -2,16 +2,11 @@ package day10
 
 import (
 	"github.com/gombrii/Advent-of-code/shared/dat"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day10", "part2", Part2)
-}
-
-func Part2(file string) any {
-	in := input.Matrix(file)
+func Part2(data []byte) any {
+	in := parse.Matrix(data, " ")
 
 	trailheads := findTrailheads(in)
 	score := scoreTrails(in, trailheads)

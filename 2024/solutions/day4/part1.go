@@ -4,20 +4,15 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/gombrii/Advent-of-code/shared/input"
 	"github.com/gombrii/Advent-of-code/shared/matrices"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
 var forw = regexp.MustCompile("XMAS")
 var bacw = regexp.MustCompile("SAMX")
 
-func init() {
-	registry.Register("2024", "day4", "part1", Part1)
-}
-
-func Part1(file string) any {
-	in := input.OldBadMatrix(file)
+func Part1(data []byte) any {
+	in := parse.OldBadMatrix(data)
 
 	hor := in
 	ver := ver(in)

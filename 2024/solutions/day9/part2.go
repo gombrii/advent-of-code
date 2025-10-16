@@ -2,13 +2,8 @@ package day9
 
 import (
 	"github.com/gombrii/Advent-of-code/shared/dat"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
-
-func init() {
-	registry.Register("2024", "day9", "part2", Part2)
-}
 
 type file struct {
 	id   *int
@@ -16,8 +11,8 @@ type file struct {
 	uid  int
 }
 
-func Part2(file string) any {
-	in := input.String(file)
+func Part2(data []byte) any {
+	in := parse.String(data)
 
 	decompressed := decompress(in)
 	optimized := optimizeWithtFrag(decompressed)

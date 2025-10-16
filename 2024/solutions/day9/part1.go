@@ -1,16 +1,11 @@
 package day9
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day9", "part1", Part1)
-}
-
-func Part1(file string) any {
-	in := input.String(file)
+func Part1(data []byte) any {
+	in := parse.String(data)
 
 	decompressed := decompress(in)
 	optimized := optimize(decompressed)

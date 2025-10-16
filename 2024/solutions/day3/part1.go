@@ -6,19 +6,14 @@ import (
 	"strings"
 
 	"github.com/gombrii/Advent-of-code/shared/exit"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	parse1 "github.com/gombrii/Advent-of-code/shared/parse"
 )
-
-func init() {
-	registry.Register("2024", "day3", "part1", Part1)
-}
 
 var mulPattern = regexp.MustCompile(`mul\(\d+,\d+\)`)
 var mulWash = regexp.MustCompile(`mul|\(|\)`)
 
-func Part1(file string) any {
-	in := input.String(file)
+func Part1(data []byte) any {
+	in := parse1.String(data)
 
 	result := runProgram(in)
 

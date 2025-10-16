@@ -6,13 +6,8 @@ import (
 	"strings"
 
 	"github.com/gombrii/Advent-of-code/shared/exit"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	parse1 "github.com/gombrii/Advent-of-code/shared/parse"
 )
-
-func init() {
-	registry.Register("2024", "day3", "part2", Part2)
-}
 
 var opPattern = regexp.MustCompile(`(mul|do|don't)\((\d+(,\d+)*)?\)`)
 
@@ -27,8 +22,8 @@ type operation struct {
 	args []int
 }
 
-func Part2(file string) any {
-	in := input.String(file)
+func Part2(data []byte) any {
+	in := parse1.String(data)
 
 	exec := parseProgram(in)
 	output := run(exec)

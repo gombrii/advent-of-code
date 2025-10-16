@@ -2,16 +2,11 @@ package day8
 
 import (
 	"github.com/gombrii/Advent-of-code/shared/dat"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	parse1 "github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day8", "part2", Part2)
-}
-
-func Part2(file string) any {
-	in := input.Matrix(file)
+func Part2(data []byte) any {
+	in := parse1.Matrix(data, " ")
 
 	catal := parse(in)
 	antinodes := findWithHarmonics(catal, len(in[0]), len(in))

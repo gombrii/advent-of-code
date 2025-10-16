@@ -1,16 +1,11 @@
 package day1
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2023", "day1", "part1", Part1)
-}
-
-func Part1(file string) any {
-	in := input.Slice(file)
+func Part1(data []byte) any {
+	in := parse.Lines(data)
 
 	numStrings := findAll(in)
 	sum := parseAndSum(numStrings)

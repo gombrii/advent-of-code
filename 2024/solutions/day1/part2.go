@@ -1,16 +1,11 @@
 package day1
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day1", "part2", Part2)
-}
-
-func Part2(file string) any {
-	in := input.Slice(file)
+func Part2(data []byte) any {
+	in := parse.Lines(data)
 
 	a, b := intArrays(in)
 	occurances := occurances(b)

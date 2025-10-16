@@ -38,7 +38,7 @@ func paths(matrix [][]string, from dat.Vec[int], ends []dat.Vec[int]) []dat.Vec[
 func turns(matrix [][]string, from dat.Vec[int], ends []dat.Vec[int]) []dat.Vec[int] {
 	for _, dir := range dirs {
 		to := from.Add(dir)
-		if !mat.InBounds(matrix, to.X, to.Y) {
+		if !mat.InMatrix(matrix, to.X, to.Y) {
 			continue
 		}
 		currHeight, err := strconv.Atoi(matrix[from.Y][from.X])

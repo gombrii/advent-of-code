@@ -2,16 +2,11 @@ package day5
 
 import (
 	"github.com/gombrii/Advent-of-code/shared/dat"
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	parse1 "github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day5", "part2", Part2)
-}
-
-func Part2(file string) any {
-	in := input.Slice(file)
+func Part2(data []byte) any {
+	in := parse1.Lines(data)
 
 	rules, updates := parse(in)
 	incorrectUpdates := findIncorrect(rules, updates)

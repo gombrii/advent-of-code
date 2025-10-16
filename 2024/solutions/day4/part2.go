@@ -1,17 +1,12 @@
 package day4
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
 	"github.com/gombrii/Advent-of-code/shared/matrices"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-func init() {
-	registry.Register("2024", "day4", "part2", Part2)
-}
-
-func Part2(file string) any {
-	in := input.OldBadMatrix(file)
+func Part2(data []byte) any {
+	in := parse.OldBadMatrix(data)
 
 	occ := countX(in)
 

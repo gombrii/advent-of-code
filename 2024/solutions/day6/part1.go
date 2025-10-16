@@ -1,13 +1,8 @@
 package day6
 
 import (
-	"github.com/gombrii/Advent-of-code/shared/input"
-	"github.com/gombrii/Advent-of-code/shared/registry"
+	"github.com/gombrii/Advent-of-code/shared/parse"
 )
-
-func init() {
-	registry.Register("2024", "day6", "part1", Part1)
-}
 
 const wall = "#"
 
@@ -29,8 +24,8 @@ type guard struct {
 	trace map[vec]bool
 }
 
-func Part1(file string) any {
-	matrix := input.Matrix(file)
+func Part1(data []byte) any {
+	matrix := parse.Matrix(data, " ")
 
 	guard := findGuard(matrix)
 	guard = passTime(matrix, guard)
