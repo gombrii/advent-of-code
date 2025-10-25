@@ -1,7 +1,6 @@
 package day4
 
 import (
-	"fmt"
 	"regexp"
 
 	"github.com/gombrii/Advent-of-code/shared/matrices"
@@ -30,7 +29,7 @@ func ver(matrix [][]byte) [][]byte {
 		for y, val := range matrices.Ver(matrix, x) {
 			out[x][y] = val
 		}
-		fmt.Printf("ver X start (%d): %s\n", x, string(out[x])) // Debug output
+		//render.Animate(20, fmt.Sprintf("ver X start (%d): %s\n", x, string(out[x]))) // Debug output
 	}
 	return out
 }
@@ -42,7 +41,7 @@ func diagNeg(matrix [][]byte) [][]byte {
 		for _, val := range matrices.DiagNegX(matrix, x) {
 			outRow = append(outRow, val)
 		}
-		fmt.Printf("diagNeg X start (%d): %s\n", x, string(outRow)) // Debug output
+		//render.Animate(20, fmt.Sprintf("diagNeg X start (%d): %s\n", x, string(outRow))) // Debug output
 		out = append(out, outRow)
 	}
 	for y := 1; y < len(matrix); y++ {
@@ -50,7 +49,7 @@ func diagNeg(matrix [][]byte) [][]byte {
 		for _, val := range matrices.DiagNegY(matrix, y) {
 			outRow = append(outRow, val)
 		}
-		fmt.Printf("diagNeg Y start (%d): %s\n", y, string(outRow)) // Debug output
+		//render.Animate(20, fmt.Sprintf("diagNeg Y start (%d): %s\n", y, string(outRow))) // Debug output
 		out = append(out, outRow)
 	}
 
@@ -64,7 +63,7 @@ func diagPos(matrix [][]byte) [][]byte {
 		for _, val := range matrices.DiagPosX(matrix, x) {
 			outRow = append(outRow, val)
 		}
-		fmt.Printf("diagPos X start (%d): %s\n", x, string(outRow)) // Debug output
+		//render.Animate(20, fmt.Sprintf("diagPos X start (%d): %s\n", x, string(outRow))) // Debug output
 		out = append(out, outRow)
 	}
 	for y := 1; y < len(matrix); y++ {
@@ -72,7 +71,7 @@ func diagPos(matrix [][]byte) [][]byte {
 		for _, val := range matrices.DiagPosY(matrix, y) {
 			outRow = append(outRow, val)
 		}
-		fmt.Printf("diagPos Y start (%d): %s\n", y, string(outRow)) // Debug output
+		//render.Animate(20, fmt.Sprintf("diagPos Y start (%d): %s\n", y, string(outRow))) // Debug output
 		out = append(out, outRow)
 	}
 
@@ -92,7 +91,7 @@ func count(rows [][]byte) int {
 	for _, row := range rows {
 		forwardMatches := len(forw.FindAll(row, -1))
 		backwardMatches := len(bacw.FindAll(row, -1))
-		fmt.Printf("Row: %s, Forward: %d, Backward: %d\n", string(row), forwardMatches, backwardMatches) // Debug output
+		//render.Animate(20, fmt.Sprintf("Row: %s, Forward: %d, Backward: %d\n", string(row), forwardMatches, backwardMatches)) // Debug output
 		acc += forwardMatches
 		acc += backwardMatches
 	}

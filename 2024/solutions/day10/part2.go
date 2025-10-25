@@ -6,7 +6,7 @@ import (
 )
 
 func Part2(data []byte) any {
-	in := parse.Matrix(data, " ")
+	in := parse.Matrix(data, "")
 
 	trailheads := findTrailheads(in)
 	score := scoreTrails(in, trailheads)

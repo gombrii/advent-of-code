@@ -6,6 +6,8 @@ import (
 	"github.com/gombrii/Advent-of-code/shared/dat"
 )
 
+type catalogue map[string][]dat.Vec[int]
+
 var antenna = regexp.MustCompile(`\w|\d`)
 
 func parse(matrix [][]string) catalogue {

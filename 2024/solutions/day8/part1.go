@@ -5,11 +5,9 @@ import (
 	parse1 "github.com/gombrii/Advent-of-code/shared/parse"
 )
 
-type catalogue map[string][]dat.Vec[int]
-
 func Part1(data []byte) any {
-	in := parse1.Matrix(data, " ")
-
+	in := parse1.Matrix(data, "")
+	
 	catal := parse(in)
 	antinodes := findAntinodes(catal, len(in[0]), len(in))
 
