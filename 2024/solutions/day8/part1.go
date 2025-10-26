@@ -7,7 +7,7 @@ import (
 
 func Part1(data []byte) any {
 	in := parse1.Matrix(data, "")
-	
+
 	catal := parse(in)
 	antinodes := findAntinodes(catal, len(in[0]), len(in))
 

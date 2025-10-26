@@ -1,4 +1,4 @@
-// Package exit does, in the spirit of Advent of Code, provide quick and dirty ways to fail
+// Package exit does, in the spirit of Advent of Code, provide quick and dirty ways to fail.
 package exit
 
 import (
@@ -9,7 +9,7 @@ import (
 // If prints err and exits if err != nil.
 func If(err error) {
 	if err != nil {
-		fmt.Printf("Error: %v\n", err)
+		fmt.Printf("Error: %v", err)
 		os.Exit(1)
 	}
 }

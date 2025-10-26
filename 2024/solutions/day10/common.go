@@ -5,6 +5,7 @@ import (
 
 	"github.com/gombrii/Advent-of-code/shared/dat"
 	"github.com/gombrii/Advent-of-code/shared/exit"
+	"github.com/gombrii/Advent-of-code/shared/iterate"
 	"github.com/gombrii/Advent-of-code/shared/mat"
 )
 
@@ -19,7 +20,7 @@ const goal = "9"
 
 func findTrailheads(matrix [][]string) map[dat.Vec[int]]bool {
 	trailheads := make(map[dat.Vec[int]]bool)
-	for pos, val := range dat.Miter(matrix) {
+	for pos, val := range iterate.Matrix(matrix) {
 		if val == "0" {
 			trailheads[pos] = true
 		}

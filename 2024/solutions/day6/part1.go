@@ -50,7 +50,7 @@ func findGuard(matrix [][]string) guard {
 
 func passTime(matrix [][]string, guard guard) guard {
 	for guard.pos.x+guard.dir.x <= len(matrix[0]) && guard.pos.y+guard.dir.y <= len(matrix) {
-		//printMatrix(matrix) // debug
+		// print(matrix, guard) // debug
 		guard = tick(matrix, guard)
 	}
 	return guard
@@ -74,3 +74,16 @@ func tick(matrix [][]string, guard guard) guard {
 	guard.pos.y = guard.pos.y + guard.dir.y
 	return guard
 }
+
+//func print(matrix [][]string, guard guard) {
+//	rocks := make([]render.G, 0)
+//	for pos, c := range iterate.Matrix(matrix) {
+//		if c == "#" {
+//			rocks = append(rocks, render.G{Symbol: '#', X: pos.X, Y: pos.Y})
+//		}
+//	}
+//
+//	render.Animate(250, render.GString(len(matrix[0]), len(matrix), '.',
+//		append(rocks, render.G{Symbol: '^', X: guard.pos.x, Y: guard.pos.y}),
+//	))
+//}

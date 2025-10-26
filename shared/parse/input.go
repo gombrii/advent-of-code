@@ -1,3 +1,5 @@
+// Package input does, in the spirit of Advent of Code, provide some common ways to interpret the
+// puzzles' input data.
 package parse
 
 import (
@@ -5,7 +7,7 @@ import (
 	"strings"
 )
 
-// Lines converts data into text and returns it as a slice where each element represents a line.
+// Lines returns data as a slice of strings corresponding to the lines of text in the input data.
 func Lines(data []byte) []string {
 	return strings.Split(string(data), "\n")
 }
@@ -15,11 +17,8 @@ func String(data []byte) string {
 	return string(data)
 }
 
-// Deprecated: Use Matrix instead
-func OldBadMatrix(data []byte) [][]byte {
-	return bytes.Split(data, []byte("\n"))
-}
-
+// Matrix returns data as a matrix. The delimiter divides the data into separates columns while rows
+// correspond to the lines of text in the input data.
 func Matrix(data []byte, delimiter string) [][]string {
 	lines := strings.Split(strings.TrimSpace(string(data)), "\n")
 	matrix := make([][]string, len(lines))
@@ -29,4 +28,9 @@ func Matrix(data []byte, delimiter string) [][]string {
 	}
 
 	return matrix
+}
+
+// Deprecated: Use Matrix instead
+func OldBadMatrix(data []byte) [][]byte {
+	return bytes.Split(data, []byte("\n"))
 }
