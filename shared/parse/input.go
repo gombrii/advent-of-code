@@ -12,6 +12,12 @@ func Lines(data []byte) []string {
 	return strings.Split(strings.TrimSpace(string(data)), "\n")
 }
 
+// Parts returns data as a slice of strings corresponding to the parts of text in the input data
+// separated by the given separator.
+func Parts(data []byte, separator string) []string {
+	return strings.Split(strings.TrimSpace(string(data)), separator)
+}
+
 // String returns data as a continuous string.
 func String(data []byte) string {
 	return strings.TrimSpace(string(data))
