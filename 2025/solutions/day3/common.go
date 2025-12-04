@@ -9,10 +9,10 @@ import (
 
 func joltage(bank string, size int) int {
 	res := ""
-	for n := -size + 1; n <= 0; n++ {
+	for n := -size; n < 0; n++ {
 		var hJoltage byte = '0'
 		hPos := 0
-		for i := len(bank) + n - 1; i >= 0; i-- {
+		for i := len(bank) + n; i >= 0; i-- {
 			if bank[i] == '*' {
 				break
 			}
