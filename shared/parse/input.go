@@ -13,9 +13,9 @@ func Lines(data []byte) []string {
 }
 
 // Parts returns data as a slice of strings corresponding to the parts of text in the input data
-// separated by the given separator.
-func Parts(data []byte, separator string) []string {
-	return strings.Split(strings.TrimSpace(string(data)), separator)
+// separated by the given delimiter.
+func Parts(data []byte, delimiter string) []string {
+	return strings.Split(strings.TrimSpace(string(data)), delimiter)
 }
 
 // String returns data as a continuous string.

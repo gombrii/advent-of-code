@@ -27,10 +27,3 @@ func Animate(delayMs int, frame string) {
 	}
 }
 
-func Println[T comparable](s []T, f func(T) any) {
-	res := make([]any, len(s))
-	for i, v := range s {
-		res[i] = f(v)
-	}
-	fmt.Println(res)
-}
