@@ -26,4 +26,3 @@ func Animate(delayMs int, frame string) {
 		fmt.Print("\033[2K\r")
 	}
 }
-
