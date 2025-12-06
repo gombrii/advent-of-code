@@ -84,12 +84,12 @@ func MString[T any](matrix [][]T) string {
 	return b.String()
 }
 
-// Extract returns the string representation of a slice while allowing an operation to be performed
-// on each element of it
+// SprintSliceBy returns the string representation of a slice while allowing an operation to be 
+// performed on each element of it.
 //
-// It is handy for example if you have a slice of structs and want to print the value held by a
-// certain field for each struct. The func lets you extract the field before it's printed.
-func Extract[T comparable](s []T, f func(T) any) string {
+// It is handy if you have a slice of structs and want to print the value held by a certain field
+// for each struct. The func lets you extract the field before it's printed.
+func SprintSlice[T comparable](s []T, f func(T) any) string {
 	res := make([]any, len(s))
 	for i, v := range s {
 		res[i] = f(v)

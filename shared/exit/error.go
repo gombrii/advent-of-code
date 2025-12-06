@@ -4,12 +4,14 @@ package exit
 import (
 	"fmt"
 	"os"
+	"runtime"
 )
 
 // If prints err and exits if err != nil.
 func If(err error) {
+	_, _, line, _ := runtime.Caller(1)
 	if err != nil {
-		fmt.Printf("Error: %v", err)
+		fmt.Printf("Error:%d: %v", line, err)
 		os.Exit(1)
 	}
 }
