@@ -25,7 +25,7 @@ type guard struct {
 }
 
 func Part1(data []byte) any {
-	matrix := parse.Matrix(data, "")
+	matrix := parse.Matrix(data)
 
 	guard := findGuard(matrix)
 	guard = passTime(matrix, guard)

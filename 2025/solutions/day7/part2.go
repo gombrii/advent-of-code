@@ -11,7 +11,7 @@ type node struct {
 }
 
 func Part2(data []byte) any {
-	in := parse.Matrix(data, "")
+	in := parse.Matrix(data)
 
 	return compile(node{startX(in), 0}, in, map[node]int{})
 }

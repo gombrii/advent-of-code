@@ -6,7 +6,7 @@ import (
 )
 
 func Part1(data []byte) any {
-	in := parse.Matrix(data, "")
+	in := parse.Matrix(data)
 
 	acc := 0
 	for y, row := range in {

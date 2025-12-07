@@ -7,6 +7,11 @@ import (
 	"strings"
 )
 
+// String returns data as a continuous string.
+func String(data []byte) string {
+	return strings.TrimSpace(string(data))
+}
+
 // Lines returns data as a slice of strings corresponding to the lines of text in the input data.
 func Lines(data []byte) []string {
 	return strings.Split(strings.TrimSpace(string(data)), "\n")
@@ -18,19 +23,13 @@ func Parts(data []byte, delimiter string) []string {
 	return strings.Split(strings.TrimSpace(string(data)), delimiter)
 }
 
-// String returns data as a continuous string.
-func String(data []byte) string {
-	return strings.TrimSpace(string(data))
-}
-
-// Matrix returns data as a matrix. The delimiter divides the data into separates columns while rows
-// correspond to the lines of text in the input data.
-func Matrix(data []byte, delimiter string) [][]string {
+// Matrix returns data as a matrix. Rows correspond to the lines of text in the input data.
+func Matrix(data []byte) [][]string {
 	lines := strings.Split(strings.TrimSpace(string(data)), "\n")
 	matrix := make([][]string, len(lines))
 
 	for i, line := range lines {
-		matrix[i] = strings.Split(line, delimiter)
+		matrix[i] = strings.Split(line, "")
 	}
 
 	return matrix

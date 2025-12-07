@@ -26,7 +26,7 @@ func calculateLikeAHuman(col int, rows [][]string, ops []rune) int {
 	for y := range rows {
 		num, err := strconv.Atoi(strings.TrimSpace(rows[y][col]))
 		exit.If(err)
-		
+
 		acc = operate(acc, num, ops[col])
 	}
 

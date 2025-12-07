@@ -4,7 +4,7 @@ package day4
 import "github.com/gombrii/Advent-of-code/shared/parse"
 
 func Part2(data []byte) any {
-	in := parse.Matrix(data, "")
+	in := parse.Matrix(data)
 
 	acc := 0
 	removed := true

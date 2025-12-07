@@ -6,7 +6,7 @@ import (
 )
 
 func Part2(data []byte) any {
-	in := parse1.Matrix(data, "")
+	in := parse1.Matrix(data)
 
 	catal := parse(in)
 	antinodes := findWithHarmonics(catal, len(in[0]), len(in))
