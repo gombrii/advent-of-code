@@ -26,7 +26,7 @@ func Matrix[T any](matrix [][]T) string {
 //
 // It is handy if you have a slice of structs and want to print a certain property of each item.
 // The func extracts the property that's printed.
-func MapSlice[T comparable](s []T, f func(T) any) string {
+func MapSlice[T any](s []T, f func(T) any) string {
 	var b strings.Builder
 	b.WriteString("[")
 	for _, v := range s {

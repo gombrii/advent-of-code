@@ -2,11 +2,6 @@
 package day9
 
 import (
-	"math"
-	"strconv"
-	"strings"
-
-	"github.com/gombrii/Advent-of-code/shared/exit"
 	"github.com/gombrii/Advent-of-code/shared/parse"
 )
 
@@ -17,27 +12,11 @@ func Part1(data []byte) any {
 	return biggestRect(tiles)
 }
 
-func parseData(data []string) [][]int {
-	tiles := make([][]int, len(data))
-
-	for i, line := range data {
-		parts := strings.Split(line, ",")
-		x, err := strconv.Atoi(parts[0])
-		exit.If(err)
-		y, err := strconv.Atoi(parts[1])
-		exit.If(err)
-
-		tiles[i] = []int{x, y}
-	}
-
-	return tiles
-}
-
-func biggestRect(tiles [][]int) int {
+func biggestRect(tiles [][2]int) int {
 	hi := 0
 	for _, tile := range tiles {
 		for _, other := range tiles {
-			area := int((math.Abs(float64(tile[0]-other[0])) + 1) * (math.Abs(float64(tile[1]-other[1])) + 1))
+			area := area(tile, other)
 			if area > hi {
 				hi = area
 			}
